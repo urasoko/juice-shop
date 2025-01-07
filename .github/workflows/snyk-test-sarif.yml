@@ -11,9 +11,8 @@ jobs:
       - uses: snyk/actions/setup@master
       - name: Snyk Test
         # run: snyk test --sarif-file-output=snyk-sarif.json
-        run: |
-          snyk test
-          snyk code test
+      - run: snyk test
+      - run: snyk code test
         continue-on-error: true
         env:
            SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
